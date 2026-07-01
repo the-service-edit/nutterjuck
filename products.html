@@ -241,6 +241,20 @@
     text-transform:uppercase;
   }
   footer a{color:var(--ink)}
+  .credit{
+    display:block;
+    margin-top:1rem;
+    font-size:.6rem;
+    letter-spacing:.28em;
+    opacity:.55;
+  }
+  .credit a{
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    padding-bottom:1px;
+    transition:border-color .3s ease,opacity .3s ease;
+  }
+  .credit a:hover{border-color:var(--ink)}
 
   @media (max-width:860px){
     .grid{grid-template-columns:repeat(2,1fr)}
@@ -418,6 +432,7 @@
 
   <footer>
     NutterJuck Lures &nbsp;·&nbsp; Handmade
+    <span class="credit">Website by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></span>
   </footer>
 
   <!--
