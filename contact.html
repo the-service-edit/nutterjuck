@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — NutterJuck Lures</title>
+<meta name="description" content="Get in touch with NutterJuck Lures about a lure, a custom build, or an order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Snipcart stylesheet (cart overlay) -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.3/default/snipcart.css" />
+<style>
+  :root{
+    --ink:#000;
+    --paper:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* slim header */
+  header{
+    position:sticky;
+    top:0;
+    background:var(--paper);
+    border-bottom:1.5px solid var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1rem clamp(1.2rem,4vw,2.6rem);
+    z-index:10;
+  }
+  .wordmark{
+    font-family:'Anton',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+  }
+  .wordmark img{height:26px;width:auto;display:block}
+  .nav{display:flex;align-items:center;gap:clamp(1rem,3vw,2rem)}
+  .back{
+    font-size:.7rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:1.5px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .3s ease;
+  }
+  .back:hover{border-color:var(--ink)}
+  .cart{
+    font-family:'Archivo',sans-serif;
+    font-size:.7rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--ink);
+    background:none;
+    border:1.5px solid var(--ink);
+    padding:.55rem .9rem;
+    cursor:pointer;
+    transition:background .3s ease,color .3s ease;
+  }
+  .cart:hover{background:var(--ink);color:var(--paper)}
+
+  main{flex:1}
+
+  .head{
+    text-align:center;
+    padding:clamp(3rem,8vw,5.5rem) 1.5rem clamp(1rem,3vw,2rem);
+  }
+  .head h1{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(2.6rem,11vw,6rem);
+    line-height:.92;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+  }
+  .head p{
+    margin-top:1.1rem;
+    font-size:.74rem;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+  }
+
+  .contact-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.2rem;
+    padding:clamp(1rem,3vw,2rem) 1.5rem clamp(3.5rem,9vw,6rem);
+    text-align:center;
+  }
+  .contact-wrap p.lead{
+    max-width:46ch;
+    font-size:.9rem;
+    line-height:1.6;
+    letter-spacing:.02em;
+  }
+  .contact{
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+    width:min(100%,480px);
+    margin-top:.4rem;
+    text-align:left;
+  }
+  .contact input,.contact textarea{
+    width:100%;
+    border:1.5px solid var(--ink);
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:.9rem;
+    letter-spacing:.02em;
+    padding:.85rem 1rem;
+  }
+  .contact input::placeholder,.contact textarea::placeholder{color:var(--ink);opacity:.45}
+  .contact input:focus,.contact textarea:focus{outline:none}
+  .contact textarea{resize:vertical;min-height:150px}
+  .contact button{
+    font-family:'Anton',sans-serif;
+    font-size:.86rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--paper);
+    background:var(--ink);
+    border:1.5px solid var(--ink);
+    padding:.95rem 1.1rem;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    z-index:0;
+    transition:color .4s ease;
+  }
+  .contact button::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:var(--paper);
+    transform:translateY(101%);
+    transition:transform .4s cubic-bezier(.7,0,.2,1);
+    z-index:-1;
+  }
+  .contact button:hover{color:var(--ink)}
+  .contact button:hover::before{transform:translateY(0)}
+  .done{
+    font-family:'Anton',sans-serif;
+    font-size:1.2rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-top:.4rem;
+  }
+
+  footer{
+    border-top:1.5px solid var(--ink);
+    text-align:center;
+    padding:2.2rem 1.5rem;
+    font-size:.68rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+  }
+  footer a{color:var(--ink)}
+  .credit{
+    display:block;
+    margin-top:1rem;
+    font-size:.6rem;
+    letter-spacing:.28em;
+    opacity:.55;
+  }
+  .credit a{
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    padding-bottom:1px;
+    transition:border-color .3s ease;
+  }
+  .credit a:hover{border-color:var(--ink)}
+
+  @media (max-width:560px){
+    .wordmark span{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <a class="wordmark" href="index.html">
+      <img src="logo-dark.png" alt="">
+      <span>NutterJuck Lures</span>
+    </a>
+    <nav class="nav">
+      <a class="back" href="products.html">Shop</a>
+      <button class="snipcart-checkout cart" aria-label="Open cart">
+        Cart (<span class="snipcart-items-count">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="head">
+      <h1>Contact</h1>
+      <p>Get in Touch</p>
+    </section>
+
+    <!--
+      Contact form — set the Web3Forms access key below.
+      TODO: replace YOUR_WEB3FORMS_KEY_HERE with your key from web3forms.com
+    -->
+    <section class="contact-wrap">
+      <p class="lead">Questions about a lure, a custom build, or an order? Send a message and we'll get back to you.</p>
+      <form class="contact netform" data-done="Thanks, we'll be in touch.">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+        <input type="hidden" name="subject" value="New NutterJuck Lures enquiry">
+        <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+        <textarea name="message" placeholder="Your message" required aria-label="Your message"></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    NutterJuck Lures &nbsp;·&nbsp; Handmade
+    <span class="credit">Website by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></span>
+  </footer>
+
+  <!-- Snipcart (keeps the cart working from this page too) -->
+  <div hidden
+    id="snipcart"
+    data-api-key="YOUR_PUBLIC_API_KEY_HERE"
+    data-config-modal-style="side"
+    data-currency="aud"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
+
+  <script>
+    // Inline form submit via Web3Forms — keeps the visitor on the page.
+    (function(){
+      document.querySelectorAll('.netform').forEach(function(form){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var data = new FormData(form);
+          var btn = form.querySelector('button');
+          btn.textContent = '...';
+          fetch('https://api.web3forms.com/submit', {method:'POST', body:data})
+            .then(function(r){ return r.json(); })
+            .then(function(res){
+              if(res.success){
+                var done = document.createElement('span');
+                done.className = 'done';
+                done.textContent = form.dataset.done || 'Thanks.';
+                form.replaceWith(done);
+              } else {
+                btn.textContent = 'Try again';
+              }
+            })
+            .catch(function(){ btn.textContent = 'Try again'; });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
