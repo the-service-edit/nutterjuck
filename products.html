@@ -129,6 +129,9 @@
   .thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .thumb svg{width:72%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
   .card:hover .thumb svg{transform:translateX(6px) rotate(-3deg)}
+  .card-link{display:flex;flex-direction:column;gap:1.4rem;text-decoration:none;color:inherit}
+  .card-link:hover .thumb img{opacity:.85}
+  .card-link:hover .name{text-decoration:underline;text-underline-offset:3px}
   .meta{display:flex;flex-direction:column;gap:.45rem}
   .index{
     font-size:.68rem;
@@ -374,35 +377,39 @@
   <section class="grid">
 
     <article class="card">
-      <div class="thumb"><img src="products/test-1.png" alt="The Nutter"></div>
-      <div class="meta">
-        <span class="name">The Nutter</span>
-        <span class="desc">Shallow diver. The one that started it.</span>
-        <span class="price">$28.00</span>
-      </div>
+      <a class="card-link" href="og-bass-walker.html">
+        <div class="thumb"><img src="products/test-1.png" alt="OG Bass Walker"></div>
+        <div class="meta">
+          <span class="name">OG Bass Walker</span>
+          <span class="desc">The original. A topwater walker for Australian bass.</span>
+          <span class="price">$55.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
-        data-item-id="nutter-01"
-        data-item-name="The Nutter"
-        data-item-price="28.00"
-        data-item-url="products.html"
+        data-item-id="og-bass-walker"
+        data-item-name="OG Bass Walker"
+        data-item-price="55.00"
+        data-item-url="og-bass-walker.html"
         data-item-image="products/test-1.png"
-        data-item-description="Shallow diver. The one that started it.">
-        Add to cart · $28
+        data-item-description="The original. A topwater walker for Australian bass.">
+        Add to cart · $55
       </button>
     </article>
 
     <article class="card">
-      <div class="thumb"><img src="products/test-2.png" alt="Juck Minnow"></div>
-      <div class="meta">
-        <span class="name">Juck Minnow</span>
-        <span class="desc">Tight wobble, built for clear water.</span>
-        <span class="price">$26.00</span>
-      </div>
+      <a class="card-link" href="juck-minnow.html">
+        <div class="thumb"><img src="products/test-2.png" alt="Juck Minnow"></div>
+        <div class="meta">
+          <span class="name">Juck Minnow</span>
+          <span class="desc">Tight wobble, built for clear water.</span>
+          <span class="price">$26.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
         data-item-id="juck-minnow-02"
         data-item-name="Juck Minnow"
         data-item-price="26.00"
-        data-item-url="products.html"
+        data-item-url="juck-minnow.html"
         data-item-image="products/test-2.png"
         data-item-description="Tight wobble, built for clear water.">
         Add to cart · $26
@@ -410,17 +417,19 @@
     </article>
 
     <article class="card">
-      <div class="thumb"><img src="products/test-3.png" alt="Deep Cutter"></div>
-      <div class="meta">
-        <span class="name">Deep Cutter</span>
-        <span class="desc">Heavy-bodied. Goes where the big ones sit.</span>
-        <span class="price">$32.00</span>
-      </div>
+      <a class="card-link" href="deep-cutter.html">
+        <div class="thumb"><img src="products/test-3.png" alt="Deep Cutter"></div>
+        <div class="meta">
+          <span class="name">Deep Cutter</span>
+          <span class="desc">Heavy-bodied. Goes where the big ones sit.</span>
+          <span class="price">$32.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
         data-item-id="deep-cutter-03"
         data-item-name="Deep Cutter"
         data-item-price="32.00"
-        data-item-url="products.html"
+        data-item-url="deep-cutter.html"
         data-item-image="products/test-3.png"
         data-item-description="Heavy-bodied. Goes where the big ones sit.">
         Add to cart · $32
@@ -428,17 +437,19 @@
     </article>
 
     <article class="card">
-      <div class="thumb"><img src="products/test-1.png" alt="Surface Pop"></div>
-      <div class="meta">
-        <span class="name">Surface Pop</span>
-        <span class="desc">Topwater popper for early-morning strikes.</span>
-        <span class="price">$24.00</span>
-      </div>
+      <a class="card-link" href="surface-pop.html">
+        <div class="thumb"><img src="products/test-1.png" alt="Surface Pop"></div>
+        <div class="meta">
+          <span class="name">Surface Pop</span>
+          <span class="desc">Topwater popper for early-morning strikes.</span>
+          <span class="price">$24.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
         data-item-id="surface-pop-04"
         data-item-name="Surface Pop"
         data-item-price="24.00"
-        data-item-url="products.html"
+        data-item-url="surface-pop.html"
         data-item-image="products/test-1.png"
         data-item-description="Topwater popper for early-morning strikes.">
         Add to cart · $24
@@ -446,17 +457,19 @@
     </article>
 
     <article class="card">
-      <div class="thumb"><img src="products/test-2.png" alt="The Spinner"></div>
-      <div class="meta">
-        <span class="name">The Spinner</span>
-        <span class="desc">Flash and vibration, all day retrieve.</span>
-        <span class="price">$27.00</span>
-      </div>
+      <a class="card-link" href="the-spinner.html">
+        <div class="thumb"><img src="products/test-2.png" alt="The Spinner"></div>
+        <div class="meta">
+          <span class="name">The Spinner</span>
+          <span class="desc">Flash and vibration, all day retrieve.</span>
+          <span class="price">$27.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
         data-item-id="the-spinner-05"
         data-item-name="The Spinner"
         data-item-price="27.00"
-        data-item-url="products.html"
+        data-item-url="the-spinner.html"
         data-item-image="products/test-2.png"
         data-item-description="Flash and vibration, all day retrieve.">
         Add to cart · $27
@@ -464,17 +477,19 @@
     </article>
 
     <article class="card">
-      <div class="thumb"><img src="products/test-3.png" alt="Night Glide"></div>
-      <div class="meta">
-        <span class="name">Night Glide</span>
-        <span class="desc">Slow sink, low light. A patient lure.</span>
-        <span class="price">$30.00</span>
-      </div>
+      <a class="card-link" href="night-glide.html">
+        <div class="thumb"><img src="products/test-3.png" alt="Night Glide"></div>
+        <div class="meta">
+          <span class="name">Night Glide</span>
+          <span class="desc">Slow sink, low light. A patient lure.</span>
+          <span class="price">$30.00</span>
+        </div>
+      </a>
       <button class="snipcart-add-item buy"
         data-item-id="night-glide-06"
         data-item-name="Night Glide"
         data-item-price="30.00"
-        data-item-url="products.html"
+        data-item-url="night-glide.html"
         data-item-image="products/test-3.png"
         data-item-description="Slow sink, low light. A patient lure.">
         Add to cart · $30
