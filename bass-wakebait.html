@@ -30,12 +30,7 @@
   .media-main{flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:clamp(320px,50vw,620px)}
   .media-main img{width:100%;height:100%;object-fit:cover;display:block}
   .flag{position:absolute;top:0;left:0;background:var(--paper);color:var(--ink);border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);font-family:'Anton',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem .9rem;z-index:2}
-  .thumbs{display:flex;border-top:1.5px solid var(--ink)}
-  .thumb{flex:1;aspect-ratio:1/1;max-height:110px;background:#000;border:none;border-right:1.5px solid var(--ink);padding:0;cursor:pointer;opacity:.45;transition:opacity .3s ease}
-  .thumb:last-child{border-right:none}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-  .thumb[aria-current="true"]{opacity:1}
-  .thumb:hover{opacity:.85}
+  .shown{position:absolute;left:0;bottom:0;color:var(--paper);opacity:.45;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;padding:1rem 1.2rem;pointer-events:none}
 
   .info{padding:clamp(2rem,6vw,5rem) clamp(1.4rem,5vw,4rem);display:flex;flex-direction:column;justify-content:center;gap:1.3rem}
   .eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.55}
@@ -68,10 +63,6 @@
   .buy:hover::before{transform:translateY(0)}
   .buy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-  .trust{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1.5px solid var(--ink);text-align:center}
-  .trust div{padding:1.4rem 1rem;border-right:1.5px solid var(--ink);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase}
-  .trust div:last-child{border-right:none}
-
   .prevnext{display:flex;justify-content:space-between;gap:1rem;border-bottom:1.5px solid var(--ink);padding:1.1rem clamp(1.4rem,5vw,4rem)}
   .prevnext a{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1.5px solid transparent;padding-bottom:2px;transition:border-color .3s ease}
   .prevnext a:hover{border-color:var(--ink)}
@@ -86,9 +77,6 @@
     .product{grid-template-columns:1fr}
     .media{border-right:none;border-bottom:1.5px solid var(--ink)}
     .media-main{min-height:auto;aspect-ratio:1/1}
-    .trust{grid-template-columns:1fr}
-    .trust div{border-right:none;border-bottom:1.5px solid var(--ink)}
-    .trust div:last-child{border-bottom:none}
   }
   @media (max-width:560px){.wordmark span{display:none}}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -112,19 +100,15 @@
   <main>
     <article class="product">
       <!--
-        GALLERY
-        TODO: only the Black & White shot exists. When the Black and White
-        shots are photographed, save them as
-          products/bass-wakebait-black.png
-          products/bass-wakebait-white.png
-        and add a data-image attribute to the matching .swatch button below.
-        The JS will then swap the hero image on colour select automatically.
+        MEDIA — one hero image, swapped by the colourway swatches below.
+        01 = Black & White   02 = Black   03 = White
       -->
       <div class="media">
         <span class="flag">2026 Thumper Tail</span>
         <div class="media-main">
-          <img id="mainImage" src="products/bass-wakebait-black-white.png" alt="Bass Wakebait in Black &amp; White — handcrafted timber wakebait with the NutterJuck Thumper Tail">
+          <img id="mainImage" src="products/bass-wakebait-02.png" alt="Bass Wakebait in Black — handcrafted timber wakebait with the NutterJuck Thumper Tail">
         </div>
+        <span class="shown" id="shownLine">Shown in Black</span>
       </div>
 
       <div class="info">
@@ -145,13 +129,13 @@
           <span class="eyebrow">Colourway</span>
           <div class="swatches" role="group" aria-label="Choose a colourway">
             <button class="swatch" type="button" aria-pressed="true"
-              data-colour="Black &amp; White" data-stock="2" data-image="products/bass-wakebait-black-white.png">Black &amp; White</button>
+              data-colour="Black" data-stock="3" data-image="products/bass-wakebait-02.png">Black</button>
             <button class="swatch" type="button" aria-pressed="false"
-              data-colour="Black" data-stock="3">Black</button>
+              data-colour="White" data-stock="2" data-image="products/bass-wakebait-03.png">White</button>
             <button class="swatch" type="button" aria-pressed="false"
-              data-colour="White" data-stock="2">White</button>
+              data-colour="Black &amp; White" data-stock="2" data-image="products/bass-wakebait-01.png">Black &amp; White</button>
           </div>
-          <span class="stock" id="stockLine">Only 2 left in Black &amp; White</span>
+          <span class="stock" id="stockLine">Only 3 left in Black</span>
         </div>
 
         <div class="specs">
@@ -178,22 +162,16 @@
           data-item-name="Bass Wakebait"
           data-item-price="55.00"
           data-item-url="bass-wakebait.html"
-          data-item-image="products/bass-wakebait-black-white.png"
+          data-item-image="products/bass-wakebait-02.png"
           data-item-description="An original NutterJuck design, rebuilt for 2026 with the Thumper Tail. Handcrafted 55mm timber wakebait."
           data-item-custom1-name="Colour"
-          data-item-custom1-options="Black &amp; White|Black|White"
-          data-item-custom1-value="Black &amp; White"
+          data-item-custom1-options="Black|White|Black &amp; White"
+          data-item-custom1-value="Black"
           data-item-custom1-required="true">
           Add to cart · $55
         </button>
       </div>
     </article>
-
-    <section class="trust">
-      <div>Handmade in Australia</div>
-      <div>Ships within 3 business days</div>
-      <div>Questions? <a href="contact.html">Talk to the maker</a></div>
-    </section>
 
     <nav class="prevnext">
       <a href="cutback-walker.html">← Cutback Walker</a>
@@ -210,28 +188,26 @@
   <script>
     (function(){
       var mainImage = document.getElementById('mainImage');
+      var shownLine = document.getElementById('shownLine');
       var buyButton = document.getElementById('buyButton');
       var stockLine = document.getElementById('stockLine');
       var swatches  = document.querySelectorAll('.swatch');
-      var thumbs    = document.querySelectorAll('.thumb');
 
       function select(swatch){
         var colour = swatch.dataset.colour;
-        var image  = swatch.dataset.image;   // may be undefined until that colour is photographed
+        var image  = swatch.dataset.image;
         var stock  = parseInt(swatch.dataset.stock, 10);
 
-        if (image){
-          mainImage.src = image;
-          mainImage.alt = 'Bass Wakebait in ' + colour;
-        }
+        mainImage.src = image;
+        mainImage.alt = 'Bass Wakebait in ' + colour;
+        shownLine.textContent = 'Shown in ' + colour;
 
         swatches.forEach(function(s){ s.setAttribute('aria-pressed', String(s === swatch)); });
-        thumbs.forEach(function(t){ t.setAttribute('aria-current', String(t.dataset.image === image)); });
 
         if (stock > 0){
           buyButton.disabled = false;
           buyButton.setAttribute('data-item-custom1-value', colour);
-          if (image) buyButton.setAttribute('data-item-image', image);
+          buyButton.setAttribute('data-item-image', image);
           buyButton.textContent = 'Add to cart · $55';
           stockLine.textContent = stock === 1
             ? 'Last one in ' + colour
@@ -246,12 +222,6 @@
       swatches.forEach(function(s){
         if (parseInt(s.dataset.stock, 10) === 0) s.disabled = true;
         s.addEventListener('click', function(){ select(s); });
-      });
-      thumbs.forEach(function(t){
-        t.addEventListener('click', function(){
-          var match = document.querySelector('.swatch[data-image="' + t.dataset.image + '"]');
-          if (match && !match.disabled) select(match);
-        });
       });
     })();
   </script>

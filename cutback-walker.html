@@ -52,10 +52,6 @@
   .buy:hover::before{transform:translateY(0)}
   .buy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-  .trust{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1.5px solid var(--ink);text-align:center}
-  .trust div{padding:1.4rem 1rem;border-right:1.5px solid var(--ink);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase}
-  .trust div:last-child{border-right:none}
-
   .prevnext{display:flex;justify-content:space-between;gap:1rem;border-bottom:1.5px solid var(--ink);padding:1.1rem clamp(1.4rem,5vw,4rem)}
   .prevnext a{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1.5px solid transparent;padding-bottom:2px;transition:border-color .3s ease}
   .prevnext a:hover{border-color:var(--ink)}
@@ -70,9 +66,6 @@
     .product{grid-template-columns:1fr}
     .media{border-right:none;border-bottom:1.5px solid var(--ink)}
     .media-main{min-height:auto;aspect-ratio:1/1}
-    .trust{grid-template-columns:1fr}
-    .trust div{border-right:none;border-bottom:1.5px solid var(--ink)}
-    .trust div:last-child{border-bottom:none}
   }
   @media (max-width:560px){.wordmark span{display:none}}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -143,12 +136,6 @@
         </button>
       </div>
     </article>
-
-    <section class="trust">
-      <div>Handmade in Australia</div>
-      <div>Ships within 3 business days</div>
-      <div>Questions? <a href="contact.html">Talk to the maker</a></div>
-    </section>
 
     <nav class="prevnext">
       <a href="cutback-wakebait.html">← Cutback Wakebait</a>
