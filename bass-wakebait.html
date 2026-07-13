@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OG Bass Walker — NutterJuck Lures</title>
-<meta name="description" content="OG Bass Walker — the original NutterJuck lure. 55mm, 10g, handcrafted timber body with an aluminium bib. A topwater walker built for Australian Bass.">
+<title>Bass Wakebait — NutterJuck Lures</title>
+<meta name="description" content="Bass Wakebait — an original NutterJuck design, rebuilt for 2026 with the NutterJuck Thumper Tail. 55mm, 10g, handcrafted timber body with a fibre composite bib.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,10 +26,10 @@
   main{flex:1}
   .product{display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid var(--ink)}
 
-  /* gallery */
-  .media{background:#000;border-right:1.5px solid var(--ink);display:flex;flex-direction:column}
+  .media{background:#000;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;position:relative}
   .media-main{flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:clamp(320px,50vw,620px)}
   .media-main img{width:100%;height:100%;object-fit:cover;display:block}
+  .flag{position:absolute;top:0;left:0;background:var(--paper);color:var(--ink);border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);font-family:'Anton',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem .9rem;z-index:2}
   .thumbs{display:flex;border-top:1.5px solid var(--ink)}
   .thumb{flex:1;aspect-ratio:1/1;max-height:110px;background:#000;border:none;border-right:1.5px solid var(--ink);padding:0;cursor:pointer;opacity:.45;transition:opacity .3s ease}
   .thumb:last-child{border-right:none}
@@ -42,14 +42,20 @@
   .info h1{font-family:'Anton',sans-serif;font-size:clamp(2.4rem,7vw,4.2rem);line-height:.95;letter-spacing:.01em;text-transform:uppercase}
   .info .price{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.04em}
 
-  /* colourway selector */
+  .hook{border-left:3px solid var(--ink);padding-left:1rem;font-size:.95rem;line-height:1.6;letter-spacing:.02em;max-width:46ch}
+  .hook strong{font-weight:600}
+
   .colours{display:flex;flex-direction:column;gap:.7rem}
   .swatches{display:flex;gap:.6rem;flex-wrap:wrap}
   .swatch{font-family:'Archivo',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);padding:.7rem 1rem;cursor:pointer;transition:background .25s ease,color .25s ease}
   .swatch[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .swatch[disabled]{opacity:.3;cursor:not-allowed;text-decoration:line-through}
   .stock{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
+  .buy[disabled]{opacity:.35;cursor:not-allowed}
+  .buy[disabled]:hover{color:var(--paper)}
+  .buy[disabled]:hover::before{transform:translateY(101%)}
 
-  .specs ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.7rem;max-width:34ch}
+  .specs ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.7rem;max-width:36ch}
   .specs li{display:flex;justify-content:space-between;gap:1.5rem;border-bottom:1px solid rgba(0,0,0,.14);padding-bottom:.5rem}
   .specs li span:first-child{opacity:.55;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;align-self:center}
   .specs li span:last-child{font-size:.9rem;font-weight:500;text-align:right}
@@ -62,7 +68,6 @@
   .buy:hover::before{transform:translateY(0)}
   .buy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-  /* trust strip — removes friction before checkout */
   .trust{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1.5px solid var(--ink);text-align:center}
   .trust div{padding:1.4rem 1rem;border-right:1.5px solid var(--ink);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase}
   .trust div:last-child{border-right:none}
@@ -107,45 +112,46 @@
   <main>
     <article class="product">
       <!--
-        GALLERY — one .thumb per colourway. The image filenames must match
-        the data-colour value used on the matching swatch button below.
+        GALLERY
+        TODO: only the Black & White shot exists. When the Black and White
+        shots are photographed, save them as
+          products/bass-wakebait-black.png
+          products/bass-wakebait-white.png
+        and add a data-image attribute to the matching .swatch button below.
+        The JS will then swap the hero image on colour select automatically.
       -->
       <div class="media">
+        <span class="flag">2026 Thumper Tail</span>
         <div class="media-main">
-          <img id="mainImage" src="products/og-bass-walker-01.png" alt="OG Bass Walker — Colourway 01">
-        </div>
-        <div class="thumbs">
-          <button class="thumb" type="button" aria-current="true" data-image="products/og-bass-walker-01.png" aria-label="View Colourway 01">
-            <img src="products/og-bass-walker-01.png" alt="">
-          </button>
-          <button class="thumb" type="button" aria-current="false" data-image="products/og-bass-walker-02.png" aria-label="View Colourway 02">
-            <img src="products/og-bass-walker-02.png" alt="">
-          </button>
+          <img id="mainImage" src="products/bass-wakebait-black-white.png" alt="Bass Wakebait in Black &amp; White — handcrafted timber wakebait with the NutterJuck Thumper Tail">
         </div>
       </div>
 
       <div class="info">
-        <span class="eyebrow">01 — The Original</span>
-        <h1>OG Bass Walker</h1>
+        <span class="eyebrow">05 — Original Design, 2026 Build</span>
+        <h1>Bass Wakebait</h1>
         <span class="price">$55.00</span>
 
+        <p class="hook"><strong>For bass feeding high but spooked by noise.</strong> A subtle wake that pulls fish from distance — now with the Thumper Tail adding pulse without the racket.</p>
+
         <!--
-          COLOURWAYS
-          To add or rename a colour, change it in THREE places:
-            1. the data-colour attribute on the .swatch button
-            2. the button's visible text
-            3. the data-item-custom1-options list on the buy button
-          The strings must match exactly or Snipcart will reject the item.
+          COLOURWAYS + STOCK
+          data-stock is the number you have on hand. Set it to 0 and the
+          swatch greys out and the buy button locks — no overselling.
+          Snipcart also enforces this if you set inventory in the dashboard;
+          this is the visible layer that creates urgency.
         -->
         <div class="colours">
           <span class="eyebrow">Colourway</span>
           <div class="swatches" role="group" aria-label="Choose a colourway">
             <button class="swatch" type="button" aria-pressed="true"
-              data-colour="White" data-image="products/og-bass-walker-01.png">White</button>
+              data-colour="Black &amp; White" data-stock="2" data-image="products/bass-wakebait-black-white.png">Black &amp; White</button>
             <button class="swatch" type="button" aria-pressed="false"
-              data-colour="Black" data-image="products/og-bass-walker-02.png">Black</button>
+              data-colour="Black" data-stock="3">Black</button>
+            <button class="swatch" type="button" aria-pressed="false"
+              data-colour="White" data-stock="2">White</button>
           </div>
-          <span class="stock">Hand-painted and signed — one of each colour</span>
+          <span class="stock" id="stockLine">Only 2 left in Black &amp; White</span>
         </div>
 
         <div class="specs">
@@ -154,32 +160,29 @@
             <li><span>Length</span><span>55mm</span></li>
             <li><span>Weight</span><span>10g</span></li>
             <li><span>Construction</span><span>Handcrafted timber body</span></li>
-            <li><span>Bib</span><span>Aluminium</span></li>
+            <li><span>Bib</span><span>Fibre composite</span></li>
+            <li><span>Tail</span><span>NutterJuck Thumper Tail</span></li>
           </ul>
         </div>
 
         <div class="body">
-          <p>The OG Bass Walker is where the NutterJuck story began. As the original lure in the range, it has earned a reputation as a proven fish catcher that continues to deliver season after season.</p>
-          <p>Handcrafted from timber and fitted with a durable aluminium bib, it is built to create an enticing topwater walking action that Australian Bass simply can't ignore. The balanced design lets you work the lure across the surface with almost no effort, producing the classic walking action that triggers aggressive strikes.</p>
-          <p>Rivers, creeks, impoundments — the OG Bass Walker is a trusted choice for anglers who appreciate simple, effective lure design. More than just a lure, it's the foundation of the NutterJuck range, and proof of the philosophy behind it: build quality lures that catch fish, year after year.</p>
+          <p>The Bass Wakebait is one of the original NutterJuck designs and has been in the range since the beginning. Developed alongside the OG Bass Walker, it has been refined continuously over the years as new ideas, techniques and on-water experience shaped its evolution.</p>
+          <p>Handcrafted from timber and fitted with a durable fibre composite bib, it produces a subtle surface wake and rolling action that pulls fish from surprising distances. Creating disturbance without excessive noise is exactly what you want when bass are feeding high in the water column but are wary of more aggressive presentations.</p>
+          <p>The 2026 version takes it to another level. Rigged with the new NutterJuck Thumper Tail, the lure generates additional vibration, movement and surface commotion — an irresistible target for predatory fish. Traditional wakebait action, plus the pulse of the Thumper Tail, makes a presentation that demands attention.</p>
+          <p>Worked slowly across calm water at dawn, or twitched through shaded structure through the day, the Bass Wakebait is built to draw explosive strikes from Australian Bass. Years of development and proven performance behind it — quite simply the best Wakebait NutterJuck has ever produced.</p>
         </div>
 
-        <!--
-          SNIPCART BUY BUTTON
-          data-item-price MUST match the price shown above.
-          data-item-url MUST resolve to the public URL of this page.
-        -->
         <button class="snipcart-add-item buy"
           id="buyButton"
-          data-item-id="og-bass-walker"
-          data-item-name="OG Bass Walker"
+          data-item-id="bass-wakebait"
+          data-item-name="Bass Wakebait"
           data-item-price="55.00"
-          data-item-url="og-bass-walker.html"
-          data-item-image="products/og-bass-walker-01.png"
-          data-item-description="The original NutterJuck. Handcrafted 55mm timber topwater walker for Australian Bass."
+          data-item-url="bass-wakebait.html"
+          data-item-image="products/bass-wakebait-black-white.png"
+          data-item-description="An original NutterJuck design, rebuilt for 2026 with the Thumper Tail. Handcrafted 55mm timber wakebait."
           data-item-custom1-name="Colour"
-          data-item-custom1-options="White|Black"
-          data-item-custom1-value="White"
+          data-item-custom1-options="Black &amp; White|Black|White"
+          data-item-custom1-value="Black &amp; White"
           data-item-custom1-required="true">
           Add to cart · $55
         </button>
@@ -193,9 +196,9 @@
     </section>
 
     <nav class="prevnext">
-      <a href="products.html">← All lures</a>
-      <a href="contact.html">Custom build</a>
-      <a href="og-bass-clicking-walker.html">OG Bass Clicking Walker →</a>
+      <a href="cutback-walker.html">← Cutback Walker</a>
+      <a href="products.html">All lures</a>
+      <a href="codmotion.html">Codmotion →</a>
     </nav>
   </main>
 
@@ -208,31 +211,46 @@
     (function(){
       var mainImage = document.getElementById('mainImage');
       var buyButton = document.getElementById('buyButton');
+      var stockLine = document.getElementById('stockLine');
       var swatches  = document.querySelectorAll('.swatch');
       var thumbs    = document.querySelectorAll('.thumb');
 
-      function show(image, colour){
-        mainImage.src = image;
-        if (colour){
-          mainImage.alt = 'OG Bass Walker — ' + colour;
-          buyButton.setAttribute('data-item-custom1-value', colour);
-          buyButton.setAttribute('data-item-image', image);
+      function select(swatch){
+        var colour = swatch.dataset.colour;
+        var image  = swatch.dataset.image;   // may be undefined until that colour is photographed
+        var stock  = parseInt(swatch.dataset.stock, 10);
+
+        if (image){
+          mainImage.src = image;
+          mainImage.alt = 'Bass Wakebait in ' + colour;
         }
-        swatches.forEach(function(s){
-          s.setAttribute('aria-pressed', String(s.dataset.image === image));
-        });
-        thumbs.forEach(function(t){
-          t.setAttribute('aria-current', String(t.dataset.image === image));
-        });
+
+        swatches.forEach(function(s){ s.setAttribute('aria-pressed', String(s === swatch)); });
+        thumbs.forEach(function(t){ t.setAttribute('aria-current', String(t.dataset.image === image)); });
+
+        if (stock > 0){
+          buyButton.disabled = false;
+          buyButton.setAttribute('data-item-custom1-value', colour);
+          if (image) buyButton.setAttribute('data-item-image', image);
+          buyButton.textContent = 'Add to cart · $55';
+          stockLine.textContent = stock === 1
+            ? 'Last one in ' + colour
+            : 'Only ' + stock + ' left in ' + colour;
+        } else {
+          buyButton.disabled = true;
+          buyButton.textContent = 'Sold out';
+          stockLine.textContent = colour + ' — sold out';
+        }
       }
 
       swatches.forEach(function(s){
-        s.addEventListener('click', function(){ show(s.dataset.image, s.dataset.colour); });
+        if (parseInt(s.dataset.stock, 10) === 0) s.disabled = true;
+        s.addEventListener('click', function(){ select(s); });
       });
       thumbs.forEach(function(t){
         t.addEventListener('click', function(){
           var match = document.querySelector('.swatch[data-image="' + t.dataset.image + '"]');
-          show(t.dataset.image, match ? match.dataset.colour : null);
+          if (match && !match.disabled) select(match);
         });
       });
     })();

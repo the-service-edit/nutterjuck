@@ -1,1 +1,5 @@
 .DS_Store
+Thumbs.db
+
+# Raw / unedited source photography — kept locally, not shipped to the site
+products/_originals/
