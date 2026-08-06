@@ -99,15 +99,12 @@
   </header>
 
   <main>
-    <article class="product">
-      <!--
-        GALLERY — one shot for now. To add more, copy the .thumbs block
-        from og-bass-walker.html and add products/og-bass-clicking-walker-02.png
-      -->
+    <article class="product" data-product="og-bass-clicking-walker">
       <div class="media">
         <div class="media-main">
           <img id="mainImage" src="products/og-bass-clicking-walker-01.png" alt="OG Bass Clicking Walker — handmade timber topwater lure with internal click, shown with two treble hooks">
         </div>
+        <span class="shown" id="shownLine"></span>
       </div>
 
       <div class="info">
@@ -116,6 +113,9 @@
         <span class="price">$55.00</span>
 
         <p class="hook"><strong>Same lure. Same walk. Now they can hear it coming.</strong> Choose this one when the light is low, the water is stained, or the fish won't leave cover.</p>
+        <!-- Colourways and availability are rendered from stock.json by stock.js.
+             To change a colour or a stock number, edit stock.json — not this file. -->
+        <div data-colours></div>
 
         <div class="specs">
           <span class="eyebrow">Specifications</span>
@@ -162,6 +162,7 @@
   </footer>
 
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

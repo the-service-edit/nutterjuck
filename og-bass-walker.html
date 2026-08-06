@@ -94,11 +94,7 @@
   </header>
 
   <main>
-    <article class="product">
-      <!--
-        MEDIA — one hero image. The colourway swatches below swap it.
-        No thumbnail strip: two colours in a filmstrip reads as two products.
-      -->
+    <article class="product" data-product="og-bass-walker">
       <div class="media">
         <div class="media-main">
           <img id="mainImage" src="products/og-bass-walker-01.png" alt="OG Bass Walker in White">
@@ -110,25 +106,10 @@
         <span class="eyebrow">01 — The Original</span>
         <h1>OG Bass Walker</h1>
         <span class="price">$55.00</span>
+        <!-- Colourways and availability are rendered from stock.json by stock.js.
+             To change a colour or a stock number, edit stock.json — not this file. -->
+        <div data-colours></div>
 
-        <!--
-          COLOURWAYS
-          To add or rename a colour, change it in THREE places:
-            1. the data-colour attribute on the .swatch button
-            2. the button's visible text
-            3. the data-item-custom1-options list on the buy button
-          The strings must match exactly or Snipcart will reject the item.
-        -->
-        <div class="colours">
-          <span class="eyebrow">Colourway</span>
-          <div class="swatches" role="group" aria-label="Choose a colourway">
-            <button class="swatch" type="button" aria-pressed="true"
-              data-colour="White" data-image="products/og-bass-walker-01.png">White</button>
-            <button class="swatch" type="button" aria-pressed="false"
-              data-colour="Black" data-image="products/og-bass-walker-02.png">Black</button>
-          </div>
-          <span class="stock">Hand-painted and signed — one of each colour</span>
-        </div>
 
         <div class="specs">
           <span class="eyebrow">Specifications</span>
@@ -158,11 +139,7 @@
           data-item-price="55.00"
           data-item-url="og-bass-walker.html"
           data-item-image="products/og-bass-walker-01.png"
-          data-item-description="The original NutterJuck. Handcrafted 55mm timber topwater walker for Australian Bass."
-          data-item-custom1-name="Colour"
-          data-item-custom1-options="White|Black"
-          data-item-custom1-value="White"
-          data-item-custom1-required="true">
+          data-item-description="The original NutterJuck. Handcrafted 55mm timber topwater walker for Australian Bass.">
           Add to cart · $55
         </button>
       </div>
@@ -180,34 +157,9 @@
     <span class="credit">Website by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></span>
   </footer>
 
-  <script>
-    (function(){
-      var mainImage = document.getElementById('mainImage');
-      var shownLine = document.getElementById('shownLine');
-      var buyButton = document.getElementById('buyButton');
-      var swatches  = document.querySelectorAll('.swatch');
-
-      function select(swatch){
-        var colour = swatch.dataset.colour;
-        var image  = swatch.dataset.image;
-
-        mainImage.src = image;
-        mainImage.alt = 'OG Bass Walker in ' + colour;
-        shownLine.textContent = 'Shown in ' + colour;
-
-        buyButton.setAttribute('data-item-custom1-value', colour);
-        buyButton.setAttribute('data-item-image', image);
-
-        swatches.forEach(function(s){ s.setAttribute('aria-pressed', String(s === swatch)); });
-      }
-
-      swatches.forEach(function(s){
-        s.addEventListener('click', function(){ select(s); });
-      });
-    })();
-  </script>
 
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

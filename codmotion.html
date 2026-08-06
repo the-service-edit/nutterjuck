@@ -100,18 +100,14 @@
   </header>
 
   <main>
-    <article class="product">
-      <!--
-        GALLERY — TODO: drop the shot in as products/codmotion-01.png
-        (square, black glass set). Add -02.png and a .thumbs block to make
-        it a gallery, as on cutback-wakebait.html.
-      -->
+    <article class="product" data-product="codmotion">
       <div class="media">
         <span class="flag">Murray Cod</span>
         <div class="media-main pending">
-          <img src="products/codmotion-01.png" alt="Codmotion — handcrafted 110mm timber surface walker for Murray Cod"
+          <img id="mainImage" src="products/codmotion-01.png" alt="Codmotion — handcrafted 110mm timber surface walker for Murray Cod"
                onerror="this.remove()">
         </div>
+        <span class="shown" id="shownLine"></span>
       </div>
 
       <div class="info">
@@ -120,6 +116,9 @@
         <span class="price">$100.00</span>
 
         <p class="hook"><strong>The OG Bass Walker, scaled up for Murray Cod.</strong> 110mm and 45g of deliberate surface presence — worked slow over timber, along banks, across the shallows where cod sit waiting.</p>
+        <!-- Colourways and availability are rendered from stock.json by stock.js.
+             To change a colour or a stock number, edit stock.json — not this file. -->
+        <div data-colours></div>
 
         <div class="specs">
           <span class="eyebrow">Specifications</span>
@@ -140,6 +139,7 @@
         </div>
 
         <button class="snipcart-add-item buy"
+          id="buyButton"
           data-item-id="codmotion"
           data-item-name="Codmotion"
           data-item-price="100.00"
@@ -164,6 +164,7 @@
   </footer>
 
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

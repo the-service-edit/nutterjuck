@@ -152,7 +152,7 @@
 
     <!--
       ============================================================
-      THE RANGE — one <article class="card"> per lure.
+      THE RANGE — one <article class="card" data-product="slug"> per lure.
       To add a lure: copy a card, swap the image, name, desc, job,
       price and link, then duplicate a product page for it.
       The ADD TO CART button lives only on the product page, so the
@@ -162,7 +162,7 @@
     -->
     <section class="grid">
 
-      <article class="card">
+      <article class="card" data-product="og-bass-walker">
         <a class="card-link" href="og-bass-walker.html">
           <div class="thumb">
             <img src="products/og-bass-walker-01.png" alt="OG Bass Walker — handmade timber topwater lure">
@@ -177,8 +177,7 @@
         </a>
         <a class="view" href="og-bass-walker.html">View the lure</a>
       </article>
-
-      <article class="card">
+      <article class="card" data-product="og-bass-clicking-walker">
         <a class="card-link" href="og-bass-clicking-walker.html">
           <div class="thumb">
             <img src="products/og-bass-clicking-walker-01.png" alt="OG Bass Clicking Walker — handmade timber topwater lure with internal click">
@@ -193,25 +192,23 @@
         </a>
         <a class="view" href="og-bass-clicking-walker.html">View the lure</a>
       </article>
-
-      <article class="card">
-        <a class="card-link" href="bass-wakebait.html">
+      <article class="card" data-product="cutback-wakebait">
+        <a class="card-link" href="cutback-wakebait.html">
           <div class="thumb">
-            <span class="tag">Thumper Tail</span>
-            <img src="products/bass-wakebait-02.png" alt="Bass Wakebait — handmade timber wakebait with the NutterJuck Thumper Tail">
+            <span class="tag">New 2026</span>
+            <img src="products/cutback-wakebait-01.png" alt="Cutback Wakebait — handcrafted 150mm timber wakebait">
           </div>
           <div class="meta">
-            <span class="index">03 — Original Design, 2026 Build</span>
-            <span class="name">Bass Wakebait</span>
-            <span class="desc">A subtle wake that pulls fish from distance. Now with the Thumper Tail.</span>
-            <span class="job">Fish feeding high · spooked by noise</span>
-            <span class="price">$55.00</span>
+            <span class="index">03 — New for 2026</span>
+            <span class="name">Cutback Wakebait</span>
+            <span class="desc">A 150mm profile you can throw on the gear you already own.</span>
+            <span class="job">Biggest profile · waking retrieve</span>
+            <span class="price">$90.00</span>
           </div>
         </a>
-        <a class="view" href="bass-wakebait.html">View the lure</a>
+        <a class="view" href="cutback-wakebait.html">View the lure</a>
       </article>
-
-      <article class="card">
+      <article class="card" data-product="cutback-walker">
         <a class="card-link" href="cutback-walker.html">
           <div class="thumb">
             <span class="tag">New 2026</span>
@@ -227,25 +224,23 @@
         </a>
         <a class="view" href="cutback-walker.html">View the lure</a>
       </article>
-
-      <article class="card">
-        <a class="card-link" href="cutback-wakebait.html">
+      <article class="card" data-product="bass-wakebait">
+        <a class="card-link" href="bass-wakebait.html">
           <div class="thumb">
-            <span class="tag">New 2026</span>
-            <img src="products/cutback-wakebait-01.png" alt="Cutback Wakebait — handcrafted 150mm timber wakebait">
+            <span class="tag">Thumper Tail</span>
+            <img src="products/bass-wakebait-02.png" alt="Bass Wakebait — handmade timber wakebait with the NutterJuck Thumper Tail">
           </div>
           <div class="meta">
-            <span class="index">05 — New for 2026</span>
-            <span class="name">Cutback Wakebait</span>
-            <span class="desc">A 150mm profile you can throw on the gear you already own.</span>
-            <span class="job">Biggest profile · waking retrieve</span>
-            <span class="price">$90.00</span>
+            <span class="index">05 — Original Design, 2026 Build</span>
+            <span class="name">Bass Wakebait</span>
+            <span class="desc">A subtle wake that pulls fish from distance. Now with the Thumper Tail.</span>
+            <span class="job">Fish feeding high · spooked by noise</span>
+            <span class="price">$55.00</span>
           </div>
         </a>
-        <a class="view" href="cutback-wakebait.html">View the lure</a>
+        <a class="view" href="bass-wakebait.html">View the lure</a>
       </article>
-
-      <article class="card">
+      <article class="card" data-product="codmotion">
         <a class="card-link" href="codmotion.html">
           <div class="thumb pending">
             <span class="tag">Murray Cod</span>
@@ -328,6 +323,7 @@
     data-api-key="YOUR_PUBLIC_API_KEY_HERE"
     data-config-modal-style="side"
     data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

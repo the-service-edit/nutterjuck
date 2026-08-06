@@ -98,11 +98,7 @@
   </header>
 
   <main>
-    <article class="product">
-      <!--
-        MEDIA — one hero image, swapped by the colourway swatches below.
-        01 = Black & White   02 = Black   03 = White
-      -->
+    <article class="product" data-product="bass-wakebait">
       <div class="media">
         <span class="flag">2026 Thumper Tail</span>
         <div class="media-main">
@@ -117,26 +113,10 @@
         <span class="price">$55.00</span>
 
         <p class="hook"><strong>For bass feeding high but spooked by noise.</strong> A subtle wake that pulls fish from distance — now with the Thumper Tail adding pulse without the racket.</p>
+        <!-- Colourways and availability are rendered from stock.json by stock.js.
+             To change a colour or a stock number, edit stock.json — not this file. -->
+        <div data-colours></div>
 
-        <!--
-          COLOURWAYS + STOCK
-          data-stock is the number you have on hand. Set it to 0 and the
-          swatch greys out and the buy button locks — no overselling.
-          Snipcart also enforces this if you set inventory in the dashboard;
-          this is the visible layer that creates urgency.
-        -->
-        <div class="colours">
-          <span class="eyebrow">Colourway</span>
-          <div class="swatches" role="group" aria-label="Choose a colourway">
-            <button class="swatch" type="button" aria-pressed="true"
-              data-colour="Black" data-stock="3" data-image="products/bass-wakebait-02.png">Black</button>
-            <button class="swatch" type="button" aria-pressed="false"
-              data-colour="White" data-stock="2" data-image="products/bass-wakebait-03.png">White</button>
-            <button class="swatch" type="button" aria-pressed="false"
-              data-colour="Black &amp; White" data-stock="2" data-image="products/bass-wakebait-01.png">Black &amp; White</button>
-          </div>
-          <span class="stock" id="stockLine">Only 3 left in Black</span>
-        </div>
 
         <div class="specs">
           <span class="eyebrow">Specifications</span>
@@ -163,11 +143,7 @@
           data-item-price="55.00"
           data-item-url="bass-wakebait.html"
           data-item-image="products/bass-wakebait-02.png"
-          data-item-description="An original NutterJuck design, rebuilt for 2026 with the Thumper Tail. Handcrafted 55mm timber wakebait."
-          data-item-custom1-name="Colour"
-          data-item-custom1-options="Black|White|Black &amp; White"
-          data-item-custom1-value="Black"
-          data-item-custom1-required="true">
+          data-item-description="An original NutterJuck design, rebuilt for 2026 with the Thumper Tail. Handcrafted 55mm timber wakebait.">
           Add to cart · $55
         </button>
       </div>
@@ -185,48 +161,9 @@
     <span class="credit">Website by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></span>
   </footer>
 
-  <script>
-    (function(){
-      var mainImage = document.getElementById('mainImage');
-      var shownLine = document.getElementById('shownLine');
-      var buyButton = document.getElementById('buyButton');
-      var stockLine = document.getElementById('stockLine');
-      var swatches  = document.querySelectorAll('.swatch');
-
-      function select(swatch){
-        var colour = swatch.dataset.colour;
-        var image  = swatch.dataset.image;
-        var stock  = parseInt(swatch.dataset.stock, 10);
-
-        mainImage.src = image;
-        mainImage.alt = 'Bass Wakebait in ' + colour;
-        shownLine.textContent = 'Shown in ' + colour;
-
-        swatches.forEach(function(s){ s.setAttribute('aria-pressed', String(s === swatch)); });
-
-        if (stock > 0){
-          buyButton.disabled = false;
-          buyButton.setAttribute('data-item-custom1-value', colour);
-          buyButton.setAttribute('data-item-image', image);
-          buyButton.textContent = 'Add to cart · $55';
-          stockLine.textContent = stock === 1
-            ? 'Last one in ' + colour
-            : 'Only ' + stock + ' left in ' + colour;
-        } else {
-          buyButton.disabled = true;
-          buyButton.textContent = 'Sold out';
-          stockLine.textContent = colour + ' — sold out';
-        }
-      }
-
-      swatches.forEach(function(s){
-        if (parseInt(s.dataset.stock, 10) === 0) s.disabled = true;
-        s.addEventListener('click', function(){ select(s); });
-      });
-    })();
-  </script>
 
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

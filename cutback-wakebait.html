@@ -93,26 +93,13 @@
   </header>
 
   <main>
-    <article class="product">
-      <!--
-        GALLERY — TODO: drop the shot in as
-        products/cutback-wakebait-01.png (square, shot on the black glass
-        set used for the Clicking Walker). To add more shots, copy the
-        .thumbs block from og-bass-walker.html.
-      -->
+    <article class="product" data-product="cutback-wakebait">
       <div class="media">
         <span class="flag">New for 2026</span>
         <div class="media-main">
           <img id="mainImage" src="products/cutback-wakebait-01.png" alt="Cutback Wakebait — handcrafted timber wakebait, 150mm overall including tail">
         </div>
-        <div class="thumbs">
-          <button class="thumb" type="button" aria-current="true" data-image="products/cutback-wakebait-01.png" aria-label="View shot 1">
-            <img src="products/cutback-wakebait-01.png" alt="">
-          </button>
-          <button class="thumb" type="button" aria-current="false" data-image="products/cutback-wakebait-02.png" aria-label="View shot 2">
-            <img src="products/cutback-wakebait-02.png" alt="">
-          </button>
-        </div>
+        <span class="shown" id="shownLine"></span>
       </div>
 
       <div class="info">
@@ -121,6 +108,9 @@
         <span class="price">$90.00</span>
 
         <p class="hook"><strong>A 150mm profile you can throw on the gear you already own.</strong> Big-lure presence without the heavy rod, the specialist reel, or the arm ache.</p>
+        <!-- Colourways and availability are rendered from stock.json by stock.js.
+             To change a colour or a stock number, edit stock.json — not this file. -->
+        <div data-colours></div>
 
         <div class="specs">
           <span class="eyebrow">Specifications</span>
@@ -141,6 +131,7 @@
         </div>
 
         <button class="snipcart-add-item buy"
+          id="buyButton"
           data-item-id="cutback-wakebait"
           data-item-name="Cutback Wakebait"
           data-item-price="90.00"
@@ -164,20 +155,9 @@
     <span class="credit">Website by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></span>
   </footer>
 
-  <script>
-    (function(){
-      var mainImage = document.getElementById('mainImage');
-      var thumbs = document.querySelectorAll('.thumb');
-      thumbs.forEach(function(t){
-        t.addEventListener('click', function(){
-          mainImage.src = t.dataset.image;
-          thumbs.forEach(function(o){ o.setAttribute('aria-current', String(o === t)); });
-        });
-      });
-    })();
-  </script>
 
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE" data-config-modal-style="side" data-currency="aud"></div>
+  <script src="stock.js" defer></script>
   <script async src="https://cdn.snipcart.com/themes/v3.7.3/snipcart.js"></script>
 </body>
 </html>

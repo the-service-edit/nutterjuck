@@ -1,0 +1,57 @@
+{
+  "_readme": [
+    "SINGLE SOURCE OF TRUTH for colourways and availability.",
+    "Edit ONLY this file, then commit and push. Every product page and the shop",
+    "grid read it at load — you never need to touch the HTML to change stock.",
+    "",
+    "stock  = units on hand for that colour. Set it to 0 and the site marks that",
+    "         colour sold out and disables the add-to-cart button.",
+    "colour = must match the option name you set in the Snipcart dashboard",
+    "         EXACTLY, or Snipcart will reject the order.",
+    "note   = optional line under the swatches. Leave out if not needed.",
+    "",
+    "This file controls what the SITE says. Snipcart's dashboard controls what",
+    "can actually be BOUGHT. Keep the two in step."
+  ],
+
+  "og-bass-walker": {
+    "note": "Hand-painted and signed — one of each colour",
+    "variants": [
+      { "colour": "White", "stock": 1, "image": "products/og-bass-walker-01.png" },
+      { "colour": "Black", "stock": 1, "image": "products/og-bass-walker-02.png" }
+    ]
+  },
+
+  "og-bass-clicking-walker": {
+    "variants": [
+      { "colour": "Black/White", "stock": 2, "image": "products/og-bass-clicking-walker-01.png" }
+    ]
+  },
+
+  "cutback-wakebait": {
+    "variants": [
+      { "colour": "White", "stock": 3, "image": "products/cutback-wakebait-01.png" },
+      { "colour": "Black", "stock": 3, "image": "products/cutback-wakebait-02.png" }
+    ]
+  },
+
+  "cutback-walker": {
+    "variants": [
+      { "colour": "White", "stock": 1, "image": "products/cutback-walker-01.png" }
+    ]
+  },
+
+  "bass-wakebait": {
+    "variants": [
+      { "colour": "Black", "stock": 3, "image": "products/bass-wakebait-02.png" },
+      { "colour": "White", "stock": 2, "image": "products/bass-wakebait-03.png" },
+      { "colour": "Black/White", "stock": 2, "image": "products/bass-wakebait-01.png" }
+    ]
+  },
+
+  "codmotion": {
+    "variants": [
+      { "colour": "Black", "stock": 3, "image": "products/codmotion-01.png" }
+    ]
+  }
+}
