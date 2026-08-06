@@ -58,7 +58,7 @@
     background:#000;
     position:relative;
   }
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
   .card-link:hover .thumb img{transform:scale(1.04)}
   /* fallback if a photo isn't in yet — keeps the grid square, no broken icon */
   .thumb.pending::after{
